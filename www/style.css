@@ -1,178 +1,178 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background-color: black;
-    overflow-y: hidden;
-    overflow-x: hidden;
+
+body {
+  background-color: black;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
 }
-.square{
-    position: relative;
-    width: 400px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.square {
+  position: relative;
+  width: 50px;
+  height: 230px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
 }
-.square span:nth-child(1){
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(#6b72ff00 50%, #000dff3b 40%);
-    box-shadow: 0 0 50px rgb(25, 0, 255), inset 0 0 50px rgb(25, 0, 255);
-    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59% ;
-    transition: 0.5s;
-    animation:  animate1 6s linear infinite;
+
+.square span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#6b72ff00 50%, #000dff3b 40%);
+  box-shadow: 0 0 40px rgb(25, 0, 255), inset 0 0 40px rgb(25, 0, 255);
+  border-radius: 50%;
 }
-.square span:nth-child(2){
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(#6b72ff00 50%, #000dff3b 40%);
-    box-shadow: 0 0 50px rgb(25, 0, 255), inset 0 0 50px rgb(25, 0, 255);
-    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59% ;
-    transition: 0.5s;
-    animation:  animate2 4s linear infinite;
+
+.square span:nth-child(1) {
+  animation: animate1 6s linear infinite;
 }
-.square span:nth-child(3){
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(#6b72ff00 50%, #000dff3b 40%);
-    box-shadow: 0 0 50px rgb(25, 0, 255), inset 0 0 50px rgb(25, 0, 255);
-    border-radius: 38% 62% 63% 37% / 41% 44% 56% 59% ;
-    transition: 0.5s;
-    animation:  animate3 8s linear infinite;
+.square span:nth-child(2) {
+  animation: animate2 4s linear infinite;
 }
+.square span:nth-child(3) {
+  animation: animate3 8s linear infinite;
+}
+
 @keyframes animate1 {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 @keyframes animate2 {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 @keyframes animate3 {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mic Button Styling */
+.mic-button-wrapper {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.giant-mic-button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #111;
+  color: white;
+  font-size: 40px;
+  border: none;
+  box-shadow: 0 0 25px blue, inset 0 0 20px rgba(0, 0, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.giant-mic-button:hover {
+  background-color: #000;
+  box-shadow: 0 0 35px cyan, inset 0 0 30px cyan;
+}
+
+/* Text Styling */
+#welcome {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#description {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+
+#siri-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#wave-canvas {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Additions for fullscreen SiriWave + centered messages */
+#siri-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+
+#siri-container.moved {
+  justify-content: flex-start;
+  padding-top: 60px;
+}
+
+#wave-canvas {
+  width: 100vw;
+  height: 200px;
+  transition: transform 0.5s ease;
+}
+
+#siri-messages {
+  width: 90%;
+  max-height: 60vh;
+  overflow-y: auto;
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: left;
 }
 
 
-#TextInput {
-    background-color: #181818a8;
-    border-color: blue;
-    box-shadow: 0 0 20px rgb(25, 0, 255),
-      inset 0 0 0px rgb(25, 0, 255);
-    border-radius: 8px;
-    color: white;
-    padding: 3px 0px 3px 20px;
-    margin: 0px 20%;
-    
-    
-  }
-  
-  
-  .input-container{
-    background-color:transparent;
-    border: none;
-    width: 95%;
-    outline: none;
-    color: white;
-    font-family: cursive;
-    
-    
-  }
-  
-  
-  .glow-on-hover {
-    width: 35px;
-    height: 35px;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-    padding: 0px;
-    margin-left: 10px;
-  }
-  
-  .glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
-  }
-  
-  .glow-on-hover:active {
-    color: #181818a8
-  }
-  
-  .glow-on-hover:active:after {
-    background: transparent;
-  }
-  
-  .glow-on-hover:hover:before {
+#siri-container.shifted {
+  justify-content: flex-start;
+  padding-top: 60px;
+}
+
+#listening-indicator {
+  font-size: 22px;
+  color: gray;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#siri-messages p {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+  margin: 10px 0;
+  white-space: pre-wrap;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+@keyframes fadeIn {
+  to {
     opacity: 1;
   }
-  
-  .glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #111;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-  }
-  
-  @keyframes glowing {
-    0% {
-      background-position: 0 0;
-    }
-  
-    50% {
-      background-position: 400% 0;
-    }
-  
-    100% {
-      background-position: 0 0;
-    }
-  }
-
-
-
+}

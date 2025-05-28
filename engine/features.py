@@ -52,6 +52,10 @@ def openCommand(query):
         speak("Opening YouTube")
         webbrowser.open("https://www.youtube.com")
         return
+    if "swiggy" in query:
+        speak("Opening swiggy")
+        webbrowser.open("https://www.swiggy.com")
+        return
 
     if query.startswith("open"):
         website_name = query.replace("open", "").strip().replace(" ", "")
