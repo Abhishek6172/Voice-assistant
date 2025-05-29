@@ -3,10 +3,7 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 MARTE_API_URL = "https://marte.app/api/v1/chat/completions"
-MARTE_API_KEY = "sk-EN7XDRq3248S9La8D1g8qWQinLH3wJdmCokxPUHxdas" 
-
-def ask_gpt(prompt):
-    try:
+MARTE_API_KEY = "Enter_yourAPI_key_here"
         headers = {
             "Authorization": f"Bearer {MARTE_API_KEY}",
             "Content-Type": "application/json"
