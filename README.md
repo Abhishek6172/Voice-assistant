@@ -38,3 +38,33 @@ PROJECT5_AI/
 
 ### 1. Clone the repo
 ```bash
+git clone https://github.com/Abhishek6172/Assistant.git
+
+### 2.requirements
+eel==0.16.0
+pyttsx3==2.90
+SpeechRecognition==3.10.1
+requests==2.31.0
+urllib3==2.2.1
+pyaudio==0.2.13
+certifi==2024.2.2
+
+
+
+
+🙌 Credits
+Marte LLM
+SiriWave.js
+Eel
+
+
+---
+
+Let me know if you want:
+
+- `LICENSE` file (MIT or Apache)  
+- `.gitignore` for Python & VS Code  
+- GitHub repo name suggestions (like `siri-assistant` or `voice-genius`)  
+ Thank You
+
+
