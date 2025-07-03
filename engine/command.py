@@ -61,7 +61,7 @@ def takecommand():
         r.pause_threshold = 0.8
 
         try:
-            audio = r.listen(source, timeout=5, phrase_time_limit=5)
+            audio = r.listen(source, timeout=8, phrase_time_limit=8)
             eel.DisplayMessage("Recognizing...")
             print(" Recognizing...")
             query = r.recognize_google(audio, language='en-in')
